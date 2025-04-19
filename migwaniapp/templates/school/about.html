@@ -1,0 +1,85 @@
+{% extends 'school/base.html' %}
+
+{% block title %}About Us - Migwani Boys High School{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h1 class="mb-4">About Migwani Boys High School</h1>
+            <p class="lead">Excellence in Education Since 1975</p>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3 class="card-title">Our History</h3>
+                    <p class="card-text">
+                        Founded in 1975, Migwani Boys High School has grown from humble beginnings to become
+                        one of the most respected institutions in the region. Our commitment to academic
+                        excellence and character development has produced outstanding leaders in various fields.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3 class="card-title">Our Vision</h3>
+                    <p class="card-text">
+                        To be a center of excellence in holistic education, nurturing responsible citizens
+                        who are academically competent, morally upright, and socially responsible.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Quick Facts</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <strong>Established:</strong> 1975
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Students:</strong> 1200+
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Teachers:</strong> 65+
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Streams:</strong> 4 Forms (A-D)
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Motto:</strong> "Strive for Excellence"
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <h2>Our Administration</h2>
+            <div class="row">
+                {% for staff in staff_members %}
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="{{ staff.photo.url }}" class="card-img-top" alt="{{ staff.name }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ staff.name }}</h5>
+                            <p class="card-text text-muted">{{ staff.role }}</p>
+                            <p class="card-text">{{ staff.bio|truncatewords:20 }}</p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <small class="text-muted">{{ staff.department }}</small>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

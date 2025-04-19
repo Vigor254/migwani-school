@@ -1,0 +1,75 @@
+{% extends 'school/base.html' %}
+
+{% block title %}Contact Us - Migwani Boys High School{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1 class="mb-4">Contact Us</h1>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3 class="card-title">School Address</h3>
+                    <p class="card-text">
+                        <i class="fas fa-map-marker-alt me-2"></i>
+                        Migwani Boys High School<br>
+                        P.O Box 123-90200<br>
+                        Migwani, Kitui County
+                    </p>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3 class="card-title">Contact Information</h3>
+                    <p class="card-text">
+                        <i class="fas fa-phone me-2"></i> Phone: +254 712 345 678<br>
+                        <i class="fas fa-envelope me-2"></i> Email: info@migwaniboys.sc.ke<br>
+                        <i class="fas fa-clock me-2"></i> Office Hours: 8:00 AM - 5:00 PM (Mon-Fri)
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Send Us a Message</h3>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="ratio ratio-16x9">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.678234234234!2d38.23423423423423!3d-1.234234234234234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTQnMDIuNCJTIDM4wrAxNCcwMi40IkU!5e0!3m2!1sen!2ske!4v1234567890123!5m2!1sen!2ske"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

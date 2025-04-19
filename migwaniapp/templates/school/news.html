@@ -1,0 +1,41 @@
+{% extends 'school/base.html' %}
+
+{% block title %}News & Announcements - Migwani Boys High School{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-4">School News & Announcements</h1>
+
+    <div class="row">
+        {% for news_item in all_news %}
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <img src="{{ news_item.image.url }}" class="card-img-top" alt="{{ news_item.title }}">
+                <div class="card-body">
+                    <h3 class="card-title">{{ news_item.title }}</h3>
+                    <p class="card-text text-muted">
+                        <small>Posted on {{ news_item.date_posted|date:"F d, Y" }}</small>
+                    </p>
+                    <p class="card-text">{{ news_item.content|truncatewords:30 }}</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <nav aria-label="News pagination">
+        <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Previous</a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'school/base.html' %}
+
+{% block title %}Photo Gallery - Migwani Boys High School{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-4">School Gallery</h1>
+
+    <div class="row">
+        {% for photo in photos %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{{ photo.image.url }}" class="card-img-top" alt="{{ photo.title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ photo.title }}</h5>
+                    <p class="card-text text-muted">
+                        <small>{{ photo.date_taken|date:"F Y" }}</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
