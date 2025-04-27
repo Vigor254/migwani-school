@@ -64,3 +64,13 @@ class Gallery(models.Model):
 
     def __str__(self):
         return self.title
+
+class CarouselImage(models.Model):
+    image = models.ImageField(upload_to='carousel/')
+    alt_text = models.CharField(max_length=100)
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.title

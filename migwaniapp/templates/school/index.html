@@ -1,10 +1,48 @@
 {% extends 'school/base.html' %}
-
+{% load static %}
 {% block content %}
+    <div class="carouselcontainer">
+
+    <div id="schoolCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        {% for image in carousel_images %}
+        <button type="button" data-bs-target="#schoolCarousel"
+                data-bs-slide-to="{{ forloop.counter0 }}"
+                {% if forloop.first %}class="active" aria-current="true"{% endif %}
+                aria-label="Slide {{ forloop.counter }}"></button>
+        {% endfor %}
+    </div>
+
+ <div class="carousel-inner">
+    {% for image in carousel_images %}
+    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+        <!-- Use the image from your carousel_images context -->
+        <img src="{% static 'images/migwani.jpg' %}" class="d-block w-100" alt="{{ image.alt }} " width="100%">
+        <div class="carousel-caption d-none d-md-block">
+            <h5>{{ image.title }}</h5>
+            <p>{{ image.description }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#schoolCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#schoolCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+    </div>
+
+
+
 <div class="hero-banner mb-4 rounded">
     <div class="hero-text rounded">
         <h1 class="display-4">Migwani Boys High School</h1>
-        <p class="lead">Striving for Excellence in Education</p>
+        <p class="lead">committed for Excellence in Education</p>
     </div>
 </div>
 

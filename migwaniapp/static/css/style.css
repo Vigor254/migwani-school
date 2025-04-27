@@ -1,15 +1,41 @@
 /* Main Styles */
 :root {
-    --primary-color: #0056b3;
+    --primary-color: #570303;
     --secondary-color: #6c757d;
-    --light-color: #f8f9fa;
-    --dark-color: #343a40;
+    --light-color: #ffffff;
+    --dark-color: #1d86ef;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
+    background-color: #570808;
 }
+     .nav-button {
+            background-color: #570303; /* Orange color, change as needed */
+            border-radius: 5px;
+            padding: 8px 15px;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: #570303; /* Darker shade for hover */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Optional: Add hover effect for regular nav items */
+        .navbar-nav .nav-link {
+            transition: all 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: rgb(87, 3, 3);
+        }
+
 
 /* Navbar */
 .navbar {
