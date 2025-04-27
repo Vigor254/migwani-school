@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.shortcuts import render
 from .models import News, Staff, Event, Gallery
 # Create your views here.
 def home(request):
