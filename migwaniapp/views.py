@@ -26,10 +26,12 @@ def home(request):
         }
     ]
 
+
     context = {
         'news': latest_news,
         'events': upcoming_events,
         'carousel_images': carousel_images  # Add this to context
+
     }
     return render(request, 'school/index.html', context)
 # def home(request):
@@ -40,8 +42,19 @@ def home(request):
 #         'events': upcoming_events,
 #     }
 #     return render(request, 'school/index.html', context)
+def about_sports(request):
+    return render(request, 'school/about/sports.html')
 
-def about(request):
+def about_policies(request):
+    return render(request, 'school/about/policies.html')
+
+def about_facilities(request):
+    return render(request, 'school/about/facilities.html')
+
+def about_Performance(request):
+    return render(request, 'school/about/performance.html')
+
+def about_overview(request):
     staff = Staff.objects.all()
     return render(request, 'school/about.html', {'staff': staff})
 

@@ -101,3 +101,37 @@ footer {
         height: 40vh;
     }
 }
+/* For better dropdown appearance */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    background-color: #0d6efd; /* Same as navbar */
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.dropdown-item:hover {
+    background-color: #0b5ed7;
+    color: white;
+}
+.navbar-collapse {
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        padding-top: 10px;
+    }
+    .dropdown-menu {
+        background-color: transparent;
+        border: none;
+    }
+    .dropdown-item {
+        color: rgba(255,255,255,.55);
+        padding-left: 30px;
+    }
+}
