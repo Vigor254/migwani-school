@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import News, Staff, Student, Event, Gallery
-
+from .models import Partner
+admin.site.register(Partner)
 @admin.register(News)
 class NewsAdmin(admin.ModelAdmin):
     list_display = ('title', 'date_posted')

@@ -135,3 +135,40 @@ footer {
         padding-left: 30px;
     }
 }
+/* Aluminum Quote Card Styles */
+.aluminum-card {
+    background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgb(87, 3, 3);
+    transition: transform 0.3s ease;
+}
+
+.aluminum-card:hover {
+    transform: translateY(-5px);
+}
+
+.aluminum-quote {
+    font-style: italic;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.aluminum-quote:before {
+    content: '"';
+    font-size: 3rem;
+    position: absolute;
+    left: -0.5rem;
+    top: -1rem;
+    opacity: 0.2;
+}
+
+.aluminum-author {
+    font-weight: 600;
+    margin-top: 1rem;
+    display: block;
+}
+
+.aluminum-year {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}

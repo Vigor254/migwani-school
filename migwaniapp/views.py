@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import News, Staff, Event, Gallery
+from .models import News, Staff, Event, Gallery, Partner
 # Create your views here.
 from django.shortcuts import render
 from .models import News, Staff, Event, Gallery
@@ -8,6 +8,7 @@ from .models import News, Staff, Event, Gallery
 def home(request):
     latest_news = News.objects.order_by('-date_posted')[:3]
     upcoming_events = Event.objects.order_by('date')[:3]
+    aluminum_partner = Partner.objects.filter(name="Migwani Aluminum").first()
 
     # Add carousel images data
     carousel_images = [
@@ -30,8 +31,13 @@ def home(request):
     context = {
         'news': latest_news,
         'events': upcoming_events,
-        'carousel_images': carousel_images  # Add this to context
-
+        'carousel_images': carousel_images,
+        'aluminum_partner': aluminum_partner,
+        'aluminum_quote': {
+            'text': "Migwani Aluminum - Building Kenya's Future, One Quality Product at a Time",
+            'author': "CEO, Migwani Aluminum Works",
+            'year': "Since 2010"
+        }
     }
     return render(request, 'school/index.html', context)
 # def home(request):

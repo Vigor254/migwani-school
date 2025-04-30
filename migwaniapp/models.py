@@ -74,3 +74,17 @@ class CarouselImage(models.Model):
 
     def __str__(self):
         return self.title
+# models.py
+from django.db import models
+
+class Partner(models.Model):
+    name = models.CharField(max_length=100)
+    quote = models.TextField()
+    author = models.CharField(max_length=100)
+    since_year = models.CharField(max_length=4)
+    logo = models.ImageField(upload_to='partners/', blank=True)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.name
+

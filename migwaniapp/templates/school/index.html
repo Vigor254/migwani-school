@@ -99,4 +99,40 @@
         </div>
     </div>
 </div>
+    {% if aluminum_partner %}
+<div class="col-md-4 mb-4 mb-md-0">
+    <div class="card aluminum-card border-0 h-100">
+        <div class="card-body">
+            <h5 class="card-title">Our Valued Partner</h5>
+            {% if aluminum_partner.logo %}
+                <img src="{{ aluminum_partner.logo.url }}" alt="{{ aluminum_partner.name }}" class="img-fluid mb-3" style="max-height: 50px;">
+            {% endif %}
+            <div class="aluminum-quote">
+                {{ aluminum_partner.quote }}
+                <span class="aluminum-author">
+                    {{ aluminum_partner.author }}
+                    <span class="aluminum-year">Since {{ aluminum_partner.since_year }}</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+<footer class="bg-dark text-white py-4">
+    <div class="container">
+        <div class="row">
+            <!-- Migwani Aluminum Speech Section -->
+            <div class="col-md-4 mb-4 mb-md-0">
+                <div class="card bg-primary border-0 h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Our Partners</h5>
+                        <blockquote class="blockquote mb-0">
+                            <p class="font-italic">"{{ aluminum_quote.text }}"</p>
+                            <footer class="blockquote-footer text-white">
+                                {{ aluminum_quote.author }} <cite>{{ aluminum_quote.year }}</cite>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
 {% endblock %}
